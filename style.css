@@ -27,11 +27,24 @@ header div{
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
 }
+
 header div input {
     padding: 8px;
     border: none;
     border-radius: 5px;
 }
+
+
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container p{
+    text-align: right;
+}
+
 .header-button{
     background-color: #04A777;
     color: white;
@@ -42,6 +55,8 @@ header div input {
 }
 
 .power-button {
+    display: flex;
+    justify-content: center;
     background-color: #04A777;
     color: white;
     margin-left: 2rem;
@@ -52,7 +67,7 @@ header div input {
 }
 
 .anonimo {
-    height: 800px;
+    height: 8rem;
     background-color: orange;
     display: flex;
     align-items: center;
@@ -61,10 +76,14 @@ header div input {
 
 .identificado{
     display: flex;
+    justify-content: center;
 }
 
 #injustice{
-    padding-left: 2rem;
+    max-width: 36rem;
+    border: 2px solid orange;
+    padding: 2rem;
+    text-align: center;
 }
 
 #span-game{
