@@ -4,11 +4,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" type="text/css" />
     <title>Javascript - Clase 11</title>
   </head>
   <body>
-    <h1>Clase 11</h1>
-    <button onclick="injusticeCalculator()">
+    <header>
+      <h1>Clase 11</h1>
+      <div>
+        <input id="header-input" type="text" placeholder="Ingresar usuario" />
+        <button class="header-button" onclick="guardarUsuario()" type="button">
+          Guardar usuario
+        </button>
+      </div>
+    </header>
+
+    <h2>
+      <span id="span-usuario" class="anonimo">Ingresa con tu usuario</span>
+    </h2>
+    <button class="power-button" onclick="injusticeCalculator()">
       <!-- botón para activar el prompt-->
       Poderes de la injusticia, ACTIVENSE!
     </button>

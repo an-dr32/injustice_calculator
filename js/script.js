@@ -1,4 +1,19 @@
 var contenedor = document.querySelector("#injustice"); // Selecciona el elemento con el id "injustice" y lo guarda en la variable contenedor. Luego, se crea una función para calcular el saldo de injusticia.
+var container = document.querySelector("#result"); // Selecciona el elemento con el id "result" y lo guarda en la variable contenedor. Luego, se crea una función para calcular el saldo de injusticia.
+var input = document.getElementById("#power-button"); // Selecciona el elemento con el id
+
+const headerInput = document.querySelector("#header-input"); // Se pide el elemento
+const spanUsuario = document.querySelector("#span-usuario"); // Se pide el elemento
+const spanGame = document.querySelector("#span-game"); // Se
+
+function guardarUsuario() {
+  const nombreUsuario = headerInput.value;
+  console.log(nombreUsuario); // Selecciona el elemento con el id "suario" y lo guarda en la variable contenedor en la variable contenedor en la variable contenedor
+  spanUsuario.innerHTML = nombreUsuario + " esta en la casa!";
+
+  spanUsuario.classList.remove("anonimo");
+  spanUsuario.classList.add("identificado");
+}
 
 function injusticeCalculator() {
   // Función para calcular el saldo de injusticia
@@ -82,4 +97,109 @@ function injusticeCalculator() {
     " y me la vacilo firme.";
 
   contenedor.innerHTML = historia; //innerHTML es un atributo de un elemento HTML y se usa para escribir en el contenido de un elemento HTML.
+}
+
+function login(email, password) {
+  if (email === "ademo18@gmail.com") {
+    if (password === "pincheperroenvidioso") {
+      console.log("Hello sir!");
+    } else {
+      console.log("Incorrect!");
+    }
+  } else {
+    console.log("Please enter the correct email address");
+  }
+}
+
+function game() {
+  let selection = spanGame.value;
+
+  let comp = Math.ceil(Math.random() * 3);
+  if (comp === 1) {
+    computer = "piedra";
+  } else if (comp === 2) {
+    computer = "papel";
+  } else {
+    computer = "tijera";
+  }
+
+  console.log(selection, computer);
+
+  //ganaste
+  if (selection === "piedra") {
+    if (computer === "tijera") {
+      console.log("Ganaste!");
+      resultadation = "Ganaste!";
+    }
+  }
+  if (selection === "papel") {
+    if (computer === "piedra") {
+      console.log("Ganaste!");
+      resultadation = "Ganaste!";
+    }
+  }
+  if (selection === "tijera") {
+    if (computer === "papel") {
+      console.log("Ganaste!");
+      resultadation = "Ganaste!";
+    }
+  }
+
+  //perdiste
+  if (selection === "piedra") {
+    if (computer === "papel") {
+      console.log("Perdiste!");
+      resultadation = "Perdiste!";
+    }
+  }
+  if (selection === "papel") {
+    if (computer === "tijera") {
+      console.log("Perdiste!");
+      resultadation = "Perdiste!";
+    }
+  }
+  if (selection === "tijera") {
+    if (computer === "piedra") {
+      console.log("Perdiste!");
+      resultadation = "Perdiste!";
+    }
+  }
+
+  //empates
+  if (selection === "piedra") {
+    if (computer === "piedra") {
+      console.log("Empate!");
+      resultadation = "Empate!";
+    }
+  }
+  if (selection === "papel") {
+    if (computer === "papel") {
+      console.log("Empate!");
+      resultadation = "Empate!";
+    }
+  }
+  if (selection === "tijera") {
+    if (computer === "tijera") {
+      console.log("Empate!");
+      resultadation = "Empate!";
+    }
+  }
+
+  let current =
+    "Tu elegiste " +
+    selection +
+    " y la computadora eligio " +
+    computer +
+    "." +
+    " El resultado es: " +
+    resultadation;
+
+  container.innerHTML = current; //innerHTML es un atributo de un elemento HTML y se usa para escribir en el contenido de un elemento HTML.
+
+  input.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      document.getElementById("game").click();
+    }
+  });
 }
